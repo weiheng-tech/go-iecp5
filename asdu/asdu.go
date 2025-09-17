@@ -139,6 +139,12 @@ func (sf *ASDU) GetRawInfoObj() []byte {
 	return sf.rawInfoObj
 }
 
+func (sf *ASDU) CloneV2() *ASDU {
+	r := NewASDU(sf.Params, sf.Identifier)
+	r.infoObj = append(r.infoObj, sf.rawInfoObj...)
+	return r
+}
+
 // Clone deep clone asdu
 func (sf *ASDU) Clone() *ASDU {
 	r := NewASDU(sf.Params, sf.Identifier)
