@@ -63,7 +63,7 @@ func (sf *ASDU) AppendInfoObjAddr(addr InfoObjAddr) error {
 // DecodeInfoObjAddr decode info object address then the pass it
 func (sf *ASDU) DecodeInfoObjAddr() InfoObjAddr {
 	if sf.rawInfoObj == nil {
-		sf.rawInfoObj = make([]byte, 0, len(sf.infoObj))
+		sf.rawInfoObj = make([]byte, len(sf.infoObj))
 	}
 
 	copy(sf.rawInfoObj, sf.infoObj)
