@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/thinkgos/go-iecp5/asdu"
-	"github.com/thinkgos/go-iecp5/cs104"
+	"github.com/weiheng-tech/go-iecp5/asdu"
+	"github.com/weiheng-tech/go-iecp5/cs104"
 )
 
 type myClient struct{}
