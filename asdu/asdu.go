@@ -114,8 +114,9 @@ func (id Identifier) String() string {
 type ASDU struct {
 	*Params
 	Identifier
-	infoObj   []byte            // information object serial
-	bootstrap [ASDUSizeMax]byte // prevents Info malloc
+	infoObj    []byte            // information object serial
+	rawInfoObj []byte            // information object raw serial
+	bootstrap  [ASDUSizeMax]byte // prevents Info malloc
 }
 
 // NewEmptyASDU new empty asdu with special params
@@ -131,6 +132,11 @@ func NewASDU(p *Params, identifier Identifier) *ASDU {
 	a := NewEmptyASDU(p)
 	a.Identifier = identifier
 	return a
+}
+
+// GetRawInfoObj get information object raw serial
+func (sf *ASDU) GetRawInfoObj() []byte {
+	return sf.rawInfoObj
 }
 
 // Clone deep clone asdu
